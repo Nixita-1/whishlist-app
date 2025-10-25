@@ -1,0 +1,60 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.confirm-modal {
+  padding: $spacing-lg;
+}
+
+.confirm-modal__header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  margin-bottom: $spacing-md;
+}
+
+.confirm-modal__icon-wrapper {
+  @include flex-center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: $radius-full;
+  background: rgba($color-error, 0.1);
+}
+
+.confirm-modal__icon {
+  color: $color-error;
+}
+
+.confirm-modal__title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-gray-800;
+}
+
+.confirm-modal__message {
+  color: $color-gray-600;
+  margin-bottom: $spacing-lg;
+  line-height: 1.6;
+}
+
+.confirm-modal__actions {
+  display: flex;
+  gap: $spacing-md;
+}
+
+.confirm-modal__btn {
+  @include button-base;
+  flex: 1;
+
+  &--confirm {
+    @include button-variant($color-error, $color-error-dark);
+  }
+
+  &--cancel {
+    background: $color-gray-200;
+    color: $color-gray-700;
+
+    &:hover:not(:disabled) {
+      background: $color-gray-300;
+    }
+  }
+}

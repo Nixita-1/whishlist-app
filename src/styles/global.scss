@@ -1,0 +1,28 @@
+@import './reset';
+
+body {
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  
+  @include respond-to(md) {
+    padding: 0 $spacing-xl;
+  }
+  
+  &--small {
+    max-width: 1000px;
+  }
+}
+
+.required {
+  color: $color-error;
+}

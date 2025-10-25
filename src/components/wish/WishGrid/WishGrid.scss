@@ -1,0 +1,39 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.wish-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+
+  @include respond-to(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.wish-grid-empty {
+  @include flex-center;
+  @include flex-column;
+  padding: $spacing-3xl 0;
+  text-align: center;
+}
+
+.wish-grid-empty__icon {
+  font-size: 4rem;
+  margin-bottom: $spacing-md;
+}
+
+.wish-grid-empty__text {
+  font-size: $font-size-xl;
+  color: $color-gray-500;
+  margin-bottom: $spacing-sm;
+}
+
+.wish-grid-empty__subtext {
+  color: $color-gray-400;
+}

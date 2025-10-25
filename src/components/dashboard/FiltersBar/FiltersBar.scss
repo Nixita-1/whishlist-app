@@ -1,0 +1,77 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.filters-bar {
+  background: $color-white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+  padding: $spacing-md;
+  margin-bottom: $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+
+  @include respond-to(md) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.filters-bar__label {
+  @include flex-center;
+  gap: $spacing-sm;
+  color: $color-gray-700;
+  font-weight: $font-weight-semibold;
+}
+
+.filters-bar__label-text {
+  display: none;
+
+  @include respond-to(md) {
+    display: inline;
+  }
+}
+
+.filters-bar__field {
+  flex: 1;
+}
+
+.filters-bar__field-label {
+  display: block;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-gray-700;
+  margin-bottom: $spacing-xs;
+}
+
+.filters-bar__select {
+  width: 100%;
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid $color-gray-300;
+  border-radius: $radius-md;
+  outline: none;
+  cursor: pointer;
+  background: $color-white;
+  transition: all $transition-base;
+
+  &:focus {
+    @include focus-ring;
+  }
+}
+
+.filters-bar__add-btn {
+  @include button-base;
+  background: linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
+  color: $color-white;
+  width: 100%;
+
+  &:hover {
+    background: linear-gradient(135deg, $color-primary-dark 0%, $color-secondary-dark 100%);
+    box-shadow: $shadow-md;
+  }
+
+  @include respond-to(md) {
+    width: auto;
+    margin-top: $spacing-lg;
+  }
+}

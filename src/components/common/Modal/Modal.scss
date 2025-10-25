@@ -1,0 +1,24 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: $z-index-modal-backdrop;
+  @include flex-center;
+  padding: $spacing-md;
+  background: rgba($color-black, 0.5);
+  @include fade-in;
+}
+
+.modal {
+  background: $color-white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-2xl;
+  max-width: 28rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  @include custom-scrollbar;
+  @include slide-up;
+}

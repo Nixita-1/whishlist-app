@@ -1,0 +1,186 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.wish-form {
+  padding: $spacing-lg;
+}
+
+.wish-form__title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-gray-800;
+  margin-bottom: $spacing-md;
+}
+
+.wish-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.wish-form__field {
+  display: flex;
+  flex-direction: column;
+}
+
+.wish-form__label {
+  display: block;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-gray-700;
+  margin-bottom: $spacing-xs;
+}
+
+.wish-form__input,
+.wish-form__textarea {
+  width: 100%;
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid $color-gray-300;
+  border-radius: $radius-md;
+  outline: none;
+  transition: all $transition-base;
+
+  &:focus {
+    @include focus-ring;
+  }
+
+  &::placeholder {
+    color: $color-gray-400;
+  }
+}
+
+.wish-form__textarea {
+  resize: none;
+  font-family: $font-family-base;
+}
+
+.wish-form__input-wrapper {
+  position: relative;
+}
+
+.wish-form__input--with-icon {
+  padding-right: 2.5rem;
+}
+
+.wish-form__input-icon {
+  position: absolute;
+  right: $spacing-md;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $color-gray-400;
+  pointer-events: none;
+}
+
+.wish-form__field-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: $spacing-xs;
+}
+
+.wish-form__hint {
+  font-size: $font-size-xs;
+  color: $color-gray-500;
+}
+
+.wish-form__toggle {
+  font-size: $font-size-xs;
+  color: $color-primary;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: $font-weight-medium;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+}
+
+.wish-form__suggestions {
+  margin-top: $spacing-sm;
+  padding: $spacing-sm;
+  background: $color-gray-50;
+  border-radius: $radius-md;
+  border: 1px solid $color-gray-200;
+}
+
+.wish-form__suggestions-label {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  color: $color-gray-700;
+  margin-bottom: $spacing-sm;
+}
+
+.wish-form__suggestions-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.wish-form__suggestion-item {
+  width: 100%;
+  text-align: left;
+  font-size: $font-size-xs;
+  color: $color-primary;
+  background: none;
+  border: none;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  transition: all $transition-base;
+  @include text-truncate;
+
+  &:hover {
+    color: $color-primary-dark;
+    background: rgba($color-primary, 0.1);
+  }
+}
+
+.wish-form__preview {
+  margin-top: $spacing-sm;
+}
+
+.wish-form__preview-label {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  color: $color-gray-700;
+  margin-bottom: $spacing-sm;
+}
+
+.wish-form__preview-container {
+  width: 100%;
+  height: 8rem;
+  background: $color-gray-100;
+  border-radius: $radius-md;
+  overflow: hidden;
+}
+
+.wish-form__preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wish-form__actions {
+  display: flex;
+  gap: $spacing-md;
+  margin-top: $spacing-lg;
+}
+
+.wish-form__btn {
+  @include button-base;
+  flex: 1;
+
+  &--primary {
+    @include button-variant($color-primary, $color-primary-dark);
+  }
+
+  &--secondary {
+    background: $color-gray-200;
+    color: $color-gray-700;
+
+    &:hover:not(:disabled) {
+      background: $color-gray-300;
+    }
+  }
+}

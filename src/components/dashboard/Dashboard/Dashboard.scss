@@ -1,0 +1,76 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.dashboard {
+  min-height: 100vh;
+  @include gradient-bg;
+  padding: $spacing-md;
+
+  @include respond-to(md) {
+    padding: $spacing-xl;
+  }
+}
+
+.dashboard__header {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+}
+
+.dashboard__title {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-bold;
+  color: $color-gray-800;
+  margin-bottom: $spacing-sm;
+
+  @include respond-to(md) {
+    font-size: $font-size-5xl;
+  }
+}
+
+.dashboard__subtitle {
+  color: $color-gray-600;
+  font-size: $font-size-base;
+}
+
+.dashboard__load-more {
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard__load-more-btn {
+  @include button-base;
+  @include button-variant($color-primary, $color-primary-dark);
+}
+
+.dashboard__empty {
+  @include flex-center;
+  @include flex-column;
+  padding: $spacing-3xl 0;
+  text-align: center;
+}
+
+.dashboard__empty-icon {
+  display: inline-block;
+  padding: $spacing-md;
+  background: rgba($color-primary, 0.1);
+  border-radius: $radius-full;
+  font-size: 4rem;
+  margin-bottom: $spacing-md;
+}
+
+.dashboard__empty-text {
+  font-size: $font-size-xl;
+  color: $color-gray-500;
+  margin-bottom: $spacing-md;
+}
+
+.dashboard__empty-btn {
+  @include button-base;
+  background: linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
+  color: $color-white;
+  box-shadow: $shadow-md;
+
+  &:hover {
+    background: linear-gradient(135deg, $color-primary-dark 0%, $color-secondary-dark 100%);
+  }
+}
